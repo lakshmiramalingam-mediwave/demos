@@ -9,6 +9,9 @@
   padding: 20px;
 }
 .recipe-card {
+  padding: 30px;
+  display: flex;
+  column-gap: 66px;
   border: 10px solid #80ced6;
   border-radius: 5px;
   margin-top: 50px;
@@ -40,10 +43,10 @@
   font-size: 20px;
   border-radius: 12px;
 }
-img {
-  width: 50 px;
-  height: 50px;
-  margin-left: 20px;
+.picture {
+  width: 100 px;
+  height: 200px;
+  margin-left: 50px;
   float: left;
   border-radius: 20px;
 }

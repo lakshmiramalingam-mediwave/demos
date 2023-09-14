@@ -16,8 +16,14 @@ function updaterecipeListUI() {
   }
 }
 function makerecipeDiv(recipe) {
+  const imageDiv = document.createElement("div");
+  imageDiv.setAttribute("class", "imageBox");
+
   const div = document.createElement("div");
   div.setAttribute("class", "recipe-card");
+
+  const textdiv = document.createElement("div");
+  textdiv.setAttribute("class", "text-div");
 
   const id = `recipe-${recipe["id"]}`;
   div.setAttribute("id", id);
@@ -31,6 +37,7 @@ function makerecipeDiv(recipe) {
   h4.innerText = recipe["steps"];
   const image = document.createElement("img");
   image.src = recipe["image"];
+  image.setAttribute("class", "picture");
 
   const deleteBtn = document.createElement("button");
   deleteBtn.innerText = "delete";
@@ -38,11 +45,15 @@ function makerecipeDiv(recipe) {
     removerecipe(recipe["id"]);
   });
 
-  div.appendChild(h2);
-  div.appendChild(h3);
-  div.appendChild(h4);
-  div.appendChild(image);
-  div.appendChild(deleteBtn);
+  textdiv.appendChild(h2);
+  textdiv.appendChild(h3);
+  textdiv.appendChild(h4);
+  textdiv.appendChild(deleteBtn);
+
+  div.appendChild(imageDiv);
+  imageDiv.appendChild(image);
+
+  div.appendChild(textdiv);
 
   return div;
 }
